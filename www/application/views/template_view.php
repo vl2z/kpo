@@ -6,81 +6,38 @@
   <title>Starter Template - Materialize</title>
 
   <!-- CSS  -->
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script src="/js/add.js" type="text/javascript"></script>
 </head>
 <body>
   <nav class="purple darken-3" role="navigation">
     <div class="container">
-      <div class="nav-wrapper"><a id="logo-container" href="index.html" class="brand-logo">Быстро-печать </a>
+      <div class="nav-wrapper"><a id="logo-container" href="/" class="brand-logo">Быстро-печать </a>
         <ul class="right">
-		
-          <li><a href="company.html"><h5>О компании</h5></a></li>
+          <li><a href="/about"><h5>О компании</h5></a></li>
 		  <li><a href="help.html"><h5>Помощь</h5></a></li>
-		 
         </ul>
-
         <ul id="nav-mobile" class="side-nav">
-         <li><a href="company.html"><h5>О компании</h5></a></li>
+         <li><a href="/about"><h5>О компании</h5></a></li>
 		  <li><a href="help.html"><h5>Помощь</h5></a></li>
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
       </div>
     </div>
   </nav>
-  <!--<div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center orange-text">Starter Template</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-      </div>
-      <div class="row center">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
-      </div>
-      <br><br>
-
-    </div>
-  </div>-->
-
-
-  <div class="container">
-    <div class="section">
-
-      <!--   Icon Section   -->
-		<div class="row">
-		  <form class="col s12 l12 m12">
-			<div class="row">
-			  <div class="input-field col s12">
-				  <div style="margin:auto;">
-					<i class="mdi-maps-local-offer prefix"></i>
-					<input id="idnum" type="text" class="validate">
-					<label for="idnum">Введите номер заказа</label>
-				  
-				  <button id="btnconfirm" class="btn waves-effect waves-light btn-large purple darken-3 z-depth-1" type="submit" name="action">Подтвердить
-				  </button>
-				  </div>
-			  </div>
-			</div>
-		  </form>
+	<div id="content">
+		<div class="box">
+			<?php include 'application/views/'.$content_view; ?>
 		</div>
-
-    </div>
-    <br><br>
-
-    <!--<div class="section">
-
-    </div>-->
-  </div>
-
-  <footer class="page-footer purple darken-3">
+		<br class="clearfix" />
+	</div>
+	<footer class="page-footer purple darken-3">
     <div class="container">
       <div class="row white-text">
         <div class="col l6 s12 ">
-          <a class="white-text" href="company.html"><h4>О нас</h4></a>
+          <a class="white-text" href="about.html"><h4>О нас</h4></a>
           <p class="gray-text text-lighten-4"><h6>Наш сервис предоставляет быстрые и качественные услуги печати и обработки фотографий! Попробуйте!</h6></p>
-
-
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Наши партнеры</h5>
@@ -102,18 +59,14 @@
         </div>
       </div>
     </div>
-    <!--<div class="footer-copyright">
-      <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
-    </div>-->
   </footer>
-
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-
+	<script src="js/add.js"></script>
   </body>
 </html>
+
+				

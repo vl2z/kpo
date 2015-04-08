@@ -23,7 +23,7 @@ var g=0;
           span.innerHTML = ['<div class="row">  <div class="col s12">    <div class="card-panel"><div class="row"><div class="input-field col s6"><img class="thumb" src="', e.target.result,'"id="img',g,'" title="', theFile.name, '"/></div><div class="input-field col s6"> <p> <input type="checkbox" id="',g,'" checked/> <label for="',g,'">',theFile.name,'</label> </p></div></div></div></div></div>'].join('');
           document.getElementById('list').insertBefore(span, null);
 		  g=g+1;
-		  uploaded.innerHTML ="Количество фотографий: "+g;
+		  uploaded.innerHTML ="РљРѕР»РёС‡РµСЃС‚РІРѕ С„РѕС‚РѕРіСЂР°С„РёР№: "+g;
         };
 		
       })(f);
