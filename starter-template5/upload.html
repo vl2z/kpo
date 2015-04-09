@@ -77,7 +77,8 @@
 
 <style>
   .thumb {
-    height: 150px;
+    height: 100px;
+	width:150px;
     border: 1px solid #000;
     margin: 10px 5px 0 0;
   }
@@ -122,17 +123,19 @@ var im = new Image();
 			
 			
 			im.src =e.target.result;
-			if(im.height*4==im.width*3)
-			{
+			/*if(im.height*4==im.width*3)
+			{*/
           span.innerHTML = ['<div class="row">  <div class="col s12">    <div class="card-panel"><div class="row"><div class="input-field col s6"><img class="thumb" src="', e.target.result,'"id="img',g,'" title="', theFile.name, '"/></div><div class="input-field col s6"> <p> <input type="checkbox" id="',g,'" checked/> <label for="',g,'">',theFile.name," Размер = ",im.width,"x",im.height,'</label> </p></div></div></div></div></div>'].join('');
           document.getElementById('list').insertBefore(span, null);
 		  g=g+1;
 		  uploaded.innerHTML ="Количество фотографий: "+g;
-		  }
+		 /* }
 		  else
 		  {
 		  alert("Размер сторон не соответствует формату");
-		  }
+		  }*/
+		  var price = document.getElementById("label_for_price");
+		  price.innerHTML ="Цена заказа: "+g*5;
         };
 		
       })(f);
@@ -161,29 +164,25 @@ document.getElementById('upload').addEventListener('change', handleFileSelect, f
 	<label>Выберите размер	
 		</label>	
 			<select class="browser-default">
-				<option value="">4Х3</option>
-				<option value="1">16Х9</option>				
+				<option value="">10Х15</option>
+				<option value="1">15Х20</option>
+				<option value="1">20Х30</option>				
 			 </select>			
 	</div>
-	
+
+<button id="btnconfirm" class="btn waves-effect waves-light btn-large purple darken-3 z-depth-1 col s6" type="button" name="action" onclick="add_input()">Отправить
+ </button>
+	 <div class="input-field col s6 right-align valign">
+	 <h5 class="center-align">
+						<div id="label_for_price">				
+						</div>
+	</h5>
+					</div>
 <div class="row"></div>
 </div>
 		  
-		  <div style="clear: both;">
-									
-					
-				
-		  
-									
-					<div id="inputi">					
-					</div>				
-						
-					
-					<button id="btnconfirm" class="btn waves-effect waves-light btn-large purple darken-3 z-depth-1" type="button" name="action" onclick="add_input()">Отправить
-				  </button>
-				 
-				  
-			</div>
+		 
+			
 		</div>
 			
 
