@@ -9,7 +9,11 @@
   <!-- CSS  -->
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<<<<<<< HEAD
+
+=======
 	
+>>>>>>> origin/local
   </head>
 <body>
   <nav class="purple darken-3 z-depth-1" role="navigation">
@@ -34,6 +38,170 @@
 
   <div class="container">
     <div class="section">
+<<<<<<< HEAD
+
+      <!--   Icon Section   -->
+		<div class="row">
+		  <form class="col s12">
+			<div class="row">
+			  <div class="input-field col s6 ">
+				<i class="mdi-action-account-circle prefix "></i>
+				<input id="icon_prefix" type="text" class="validate ">
+				<label for="icon_prefix">Имя</label>
+			  </div>
+			  
+			  <div class="input-field col s6">
+				<i class="mdi-action-account-circle prefix"></i>
+				<input id="icon_prefix" type="text" class="validate">
+				<label for="icon_prefix">Фамилия</label>
+			  </div>
+			  
+			  <div class="input-field col s6">
+				<i class="mdi-communication-phone prefix"></i>
+				<input id="icon_telephone" type="tel" class="validate">
+				<label for="icon_telephone">Телефон</label>
+			  </div>
+			  
+			  <div class="input-field col s6">
+				<i class="mdi-content-mail prefix"></i>
+				<input id="icon_telephone" type="email" class="validate">
+				<label for="icon_telephone">E-mail</label>
+			  </div>
+			  
+				
+		
+			</div>
+			 
+		  </form>
+		  
+		  
+<div class="card-panel">
+ 
+ <div>
+ 
+
+<style>
+  .thumb {
+    height: 100px;
+	width:150px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+  }
+</style>
+
+
+		
+<div class="input-field col s12">
+<div class="fileform col s6">
+	<div class="selectbutton purple darken-3 z-depth-1 col s12">Нажмите, чтобы загрузить фото</div>	
+	<input type="file" name="upload[]" id="upload"  multiple onchange="getName(this.value);" />
+</div>
+<div class="input-field col s6">
+					<div id="fileformlabel">				
+					</div>
+				</div>
+</div>
+<output id="list"></output>
+<script type="text/javascript">
+var g=0;
+var im = new Image();
+  function handleFileSelect(evt) {
+  
+    var files = evt.target.files; // FileList object
+	
+	
+	
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
+	
+      if (!f.type.match('image.*')) {
+        continue;
+      }
+      var reader = new FileReader();
+      // Closure to capture the file information.
+      reader.onload = (function(theFile) {
+        return function(e) {
+          // Render thumbnail.
+          var span = document.createElement('span');
+		 
+		   var uploaded = document.getElementById("fileformlabel");
+			
+			
+			im.src =e.target.result;
+			/*if(im.height*4==im.width*3)
+			{*/
+          span.innerHTML = ['<div class="row">  <div class="col s12">    <div class="card-panel"><div class="row"><div class="input-field col s6"><img class="thumb" src="', e.target.result,'"id="img',g,'" title="', theFile.name, '"/></div><div class="input-field col s6"> <p> <input type="checkbox" id="',g,'" checked/> <label for="',g,'">',theFile.name," Размер = ",im.width,"x",im.height,'</label> </p></div></div></div></div></div>'].join('');
+          document.getElementById('list').insertBefore(span, null);
+		  g=g+1;
+		  uploaded.innerHTML ="Количество фотографий: "+g;
+		 /* }
+		  else
+		  {
+		  alert("Размер сторон не соответствует формату");
+		  }*/
+		  var price = document.getElementById("label_for_price");
+		  price.innerHTML ="Цена заказа: "+g*5;
+        };
+		
+      })(f);
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+    }
+	
+  }
+document.getElementById('upload').addEventListener('change', handleFileSelect, false);
+</script>  
+ 
+
+	<div class="col s6">
+		<label>Выберите тип бумаги	
+	</label>
+			<select class="browser-default">
+				<option value="" disabled selected>Глянцевая</option>
+				<option value="1">Матовая</option>
+				
+			</select>
+			
+	</div>
+	
+	
+	<div class="col s6">
+	<label>Выберите размер	
+		</label>	
+			<select class="browser-default">
+				<option value="">10Х15</option>
+				<option value="1">15Х20</option>
+				<option value="1">20Х30</option>				
+			 </select>			
+	</div>
+
+<button id="btnconfirm" class="btn waves-effect waves-light btn-large purple darken-3 z-depth-1 col s6" type="button" name="action" onclick="add_input()">Отправить
+ </button>
+	 <div class="input-field col s6 right-align valign">
+	 <h5 class="center-align">
+						<div id="label_for_price">				
+						</div>
+	</h5>
+					</div>
+<div class="row"></div>
+</div>
+		  
+		 
+			
+		</div>
+			
+
+    </div>
+    <br><br>
+
+   
+ </div>
+</div>
+
+</div>
+      </div>
+    </div>
+=======
       <!--   Icon Section   -->
 		<div class="row">
 			<form class="col s12">
@@ -104,6 +272,7 @@
 		<br><br>
 	</div>
 </div>
+>>>>>>> origin/local
 
   <footer class="page-footer purple darken-3">
     <div class="container">
@@ -111,6 +280,11 @@
         <div class="col l6 s12 ">
           <a class="white-text" href="company.html"><h4>О нас</h4></a>
           <p class="gray-text text-lighten-4"><h6>Наш сервис предоставляет быстрые и качественные услуги печати и обработки фотографий! Попробуйте!</h6></p>
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> origin/local
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Наши партнеры</h5>
@@ -139,7 +313,10 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+<<<<<<< HEAD
+=======
   <script src="js/add.js"></script>
+>>>>>>> origin/local
 
   </body>
 </html>

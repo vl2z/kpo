@@ -22,6 +22,9 @@
 }
 #idnum{
 	width:60%;
+<<<<<<< HEAD
+}
+=======
 }
 
 .thumb {
@@ -29,3 +32,4 @@
     border: 1px solid #000;
     margin: 10px 5px 0 0;
   }
+>>>>>>> origin/local
