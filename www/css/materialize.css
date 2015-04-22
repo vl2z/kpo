@@ -6072,7 +6072,7 @@ a.waves-effect .waves-ripple {
   box-sizing: border-box; }
   .collapsible-body p {
     margin: 0;
-    padding: 2rem; }
+    padding: 0.1rem; }
 
 ul.side-nav ul.collapsible {
   border: none;

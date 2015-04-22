@@ -1,6 +1,6 @@
 <?php
 
-class Model_Check extends Model
+class Model_Manager extends Model
 {
 	var $success = false;
 	public function get_data()
@@ -17,29 +17,44 @@ if (mysqli_connect_errno()) {
 	
 	/*$db = mysqli_connect("localhost","admin","password",);
 	mysql_select_db("photoprint",$db);*/
-	if(isset($_POST['login']) and is_numeric($_POST['login']))
+	if(true)//isset($_POST['login']) and is_numeric($_POST['login']))
 		{
 			$login = $_POST['login'];
 			//echo $login;
-			//$resClients = mysqli_query($mysqli,"SELECT * FROM `clients`") or die(mysqli_error());
-			$resClients = mysqli_query($mysqli,"SELECT * FROM `clients` where clientId=$login") or die(mysqli_error());
-			if (isset($resClients))
+			$resOrders = mysqli_query($mysqli,"SELECT * FROM `orders`") or die(mysqli_error());
+			
+			if (isset($resOrders))
 			{
 				$this->success = true;
 				$i=0;
-				while($rowClients = mysqli_fetch_array($resClients))
+				while($rowOrders= mysqli_fetch_array($resOrders))
 				{
+					$resClients = mysqli_query($mysqli,"SELECT * FROM `clients` WHERE clientId=$rowOrders[clientId]") or die(mysqli_error());
+					$rowClients = mysqli_fetch_array($resClients);
 					//echo "sdf".$i;
 					$i++;
-				$A[$i] = array(
-				"clientId"=>$rowClients[clientId],
-				"lastName"=>$rowClients[lastName],
-				"firstName"=>$rowClients[firstName],
-				"phone"=>$rowClients[phone],
-				"email"=>$rowClients[email],
-				"amountOfAllOrders"=>$rowClients[amountOfAllOrders]
-				
-				);
+					$A[$i] = array(
+					"id"=>$rowOrders[id],
+					"clientId"=>$rowOrders[clientId],
+					"lastName"=>$rowClients[lastName],
+					"firstName"=>$rowClients[firstName],
+					"phone"=>$rowClients[phone],
+					"email"=>$rowClients[email],
+					"price"=>$rowOrders[price],
+					
+					"dateOfTheOrder"=>$rowOrders[dateOfTheOrder],
+					"dateOfTheExecution"=>$rowOrders[dateOfTheExecution],
+					"width"=>$rowOrders[width],
+					"height"=>$rowOrders[height],
+					"paperType"=>$rowOrders[paperType],
+					
+					
+					"path"=>$rowOrders[path],
+					
+					"status"=>$rowOrders[status],
+					
+					
+					);
 /*
 					printf("
 					<div>%s

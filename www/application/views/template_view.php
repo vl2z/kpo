@@ -9,12 +9,17 @@
   <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <script src="/js/add.js" type="text/javascript"></script>
+  <script type="text/javascript">
+  function man () {
+  document.location.href = "/manager";
+  }
+  </script>
 </head>
 <body>
   <nav class="purple darken-3" role="navigation">
     <div class="container">
-      <div class="nav-wrapper"><a id="logo-container" href="/" class="brand-logo">Быстро-печать </a>
-        <ul class="right">
+      <div class="nav-wrapper" ondblclick="man()"><a id="logo-container" href="/" class="brand-logo" >Быстро-печать </a>
+        <ul class="right" >
           <li><a href="/about"><h5>О компании</h5></a></li>
 		  <li><a href="help.html"><h5>Помощь</h5></a></li>
         </ul>
