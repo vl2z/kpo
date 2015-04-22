@@ -21,7 +21,9 @@ if (mysqli_connect_errno()) {
 		{
 			$login = $_POST['login'];
 			//echo $login;
-			$res = mysqli_query($mysqli,"SELECT * FROM `clients` WHERE clientId=$login") or die(mysqli_error());
+			//$res = mysqli_query($mysqli,"SELECT * FROM `clients` WHERE clientId=$login") or die(mysqli_error());
+			$res = mysqli_query($mysqli,"SELECT orders.* from orders where id=$login") or die(mysqli_error());
+			
 			if (isset($res))
 			{
 				$this->success = true;
@@ -29,7 +31,8 @@ if (mysqli_connect_errno()) {
 				while($myrow = mysqli_fetch_array($res))
 				{
 					$i++;
-				$A[$i] = array("clientId"=>$myrow[clientId], "lastName"=>$myrow[lastName], "firstName"=>$myrow[firstName], "amountOfAllOrders"=>$myrow[amountOfAllOrders]);
+				//$A[$i] = array("clientId"=>$myrow[clientId], "lastName"=>$myrow[lastName], "firstName"=>$myrow[firstName], "amountOfAllOrders"=>$myrow[amountOfAllOrders]);
+				$A[$i] = array("<div class='section'><div class='card-panel'>","Номер заказа: <b>","id"=>$myrow[id],"</b><br></br>","Статус: <b>", "status"=>$myrow[status],"</b></div></div></div>");
 /*
 					printf("
 					<div>%s
