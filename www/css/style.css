@@ -1,0 +1,31 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+
+#files{
+	margin-top:5rem;
+	width:100%;
+	float:left;
+	position: relative;
+	border-top: 1px solid black;
+}
+#btnconfirm{
+	margin-top:10px;
+}
+#idnum{
+	width:60%;
+}
+
+.thumb {
+    height: 150px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+  }
