@@ -19,6 +19,16 @@ if (mysqli_connect_errno()) {
 	mysql_select_db("photoprint",$db);*/
 	if(true)//isset($_POST['login']) and is_numeric($_POST['login']))
 		{
+			
+			if (isset($_POST['group1']))
+			{
+				$group=$_POST['group1'];
+				$hidden=$_POST['hiddeninput'];
+				//echo "gr=".$group."hid=".$hidden;
+				if (!mysqli_query($mysqli,"UPDATE `orders` SET status='$group' WHERE id=$hidden"))
+					mysqli_error($mysqli);
+				//echo $_POST['group1'];
+			}
 			$login = $_POST['login'];
 			//echo $login;
 			$resOrders = mysqli_query($mysqli,"SELECT * FROM `orders`") or die(mysqli_error());

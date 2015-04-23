@@ -46,15 +46,26 @@
 												<p>path: %s</p>
 											</div>
 											<div class='col s6'>
-												<p>Текущий статус заказа:</p>
-												 <label>Выбрать статус заказа</label>
-												  <select class='browser-default'>
-													<option value='' >%sНе выполнен</option>
-													<option value='1'>В печати</option>
-													<option value='2'>Завершен</option>
-												  </select>
+												<p>Текущий статус заказа: <strong style='color:green; font-weight:bold;'>%s</strong></p>
+												 <form action='' method='post'>
+													<input name='hiddeninput' type='hidden' id='hidden' value=%s>
+													<p>
+													  <input class='with-gap' name='group1' type='radio' id='done%s' value='done'/>
+													  <label for='done%s'>Выполнен</label>
+													</p>
+													<p>
+													  <input class='with-gap' name='group1' type='radio' id='undone%s' value='undone'/>
+													  <label for='undone%s'>Не выполнен</label>
+													</p>
+													<p>
+													  <input class='with-gap' name='group1' type='radio' id='await%s'  value='await'/>
+													  <label for='await%s'>В печати</label>
+													</p>
 												  <br>
-												  <td><a class='right waves-effect waves-light btn purple darken-3 z-depth-1'>Подтвердить</a></td>
+													<button id='btnconfirm' class='btn waves-effect waves-light btn-large purple darken-3 z-depth-1' type='submit' name='action'>Изменить статус
+													</button>
+													<!--<a class='right waves-effect waves-light btn purple darken-3 z-depth-1'>Изменить статус</a>-->
+												</form>
 											</div>
 										</div>
 									</div>
@@ -78,7 +89,14 @@
 						$row['height'],
 						$row['paperType'],
 						$row['path'],
-						$row['status']
+						$row['status'],
+						$row['id'],//for hidden input
+						$row['id'],//this and the following for inputs and labels of radiobuttons
+						$row['id'],
+						$row['id'],
+						$row['id'],
+						$row['id'],
+						$row['id']
 						//$data[i][clientId], $data[i][lastName], $data[i][firstName],$data[i][amountOfAllOrders]
 						);
 					//
