@@ -21,11 +21,11 @@
       <div class="nav-wrapper" ondblclick="man()"><a id="logo-container" href="/" class="brand-logo" >Быстро-печать </a>
         <ul class="right" >
           <li><a href="/about"><h5>О компании</h5></a></li>
-		  <li><a href="help.html"><h5>Помощь</h5></a></li>
+		  <li><a href="/help"><h5>Помощь</h5></a></li>
         </ul>
         <ul id="nav-mobile" class="side-nav">
          <li><a href="/about"><h5>О компании</h5></a></li>
-		  <li><a href="help.html"><h5>Помощь</h5></a></li>
+		  <li><a href="/help"><h5>Помощь</h5></a></li>
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
       </div>

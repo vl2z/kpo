@@ -32,10 +32,14 @@
 				$i=0;
 				foreach($data as $row){
 					foreach($row as $sKey => $sValue){
-						printf("
+					/*	printf("
 					<div>%s
 					</div>
 					",
+					$sValue//$data[i][clientId], $data[i][lastName], $data[i][firstName],$data[i][amountOfAllOrders]
+					);
+					}*/
+					printf(
 					$sValue//$data[i][clientId], $data[i][lastName], $data[i][firstName],$data[i][amountOfAllOrders]
 					);
 					}
@@ -58,7 +62,7 @@
 			else
 			{
 				if ($bvar!=false)
-					echo "<p>No info</p>";
+					echo "<div class='section'><div class='card-panel'><b>Заказа с таким номером не существует, проверьте введенные данные.</b></div></div></div>";
 			}
 			?>
 		</div>

@@ -2,7 +2,7 @@
 function sanitStr($var)
 	{
 		$var = stripslashes($var);
-		$var = htmlentities($var);//htmlspecialchars
+		$var = htmlspecialchars($var);//htmlspecialchars
 		$var = strip_tags($var);
 		return $var;
 	}
