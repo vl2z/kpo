@@ -22,8 +22,7 @@ if (mysqli_connect_errno()) {
 			$login = $_POST['login'];
 			//echo $login;
 			//$resClients = mysqli_query($mysqli,"SELECT * FROM `clients`") or die(mysqli_error());
-			$resClients = mysqli_query($mysqli,"SELECT * FROM `clients` where clientId=$login") or die(mysqli_error());
-			if (isset($resClients))
+			
 			//$res = mysqli_query($mysqli,"SELECT * FROM `clients` WHERE clientId=$login") or die(mysqli_error());
 			$res = mysqli_query($mysqli,"SELECT orders.* from orders where id=$login") or die(mysqli_error());
 			
@@ -31,19 +30,11 @@ if (mysqli_connect_errno()) {
 			{
 				$this->success = true;
 				$i=0;
-				while($rowClients = mysqli_fetch_array($resClients))
+				while($myrow = mysqli_fetch_array($res))
 				{
 					//echo "sdf".$i;
 					$i++;
-				$A[$i] = array(
-				"clientId"=>$rowClients[clientId],
-				"lastName"=>$rowClients[lastName],
-				"firstName"=>$rowClients[firstName],
-				"phone"=>$rowClients[phone],
-				"email"=>$rowClients[email],
-				"amountOfAllOrders"=>$rowClients[amountOfAllOrders]
 				
-				);
 				//$A[$i] = array("clientId"=>$myrow[clientId], "lastName"=>$myrow[lastName], "firstName"=>$myrow[firstName], "amountOfAllOrders"=>$myrow[amountOfAllOrders]);
 				$A[$i] = array("<div class='section'><div class='card-panel'>","Номер заказа: <b>","id"=>$myrow[id],"</b><br></br>","Статус: <b>", "status"=>$myrow[status],"</b></div></div></div>");
 /*
